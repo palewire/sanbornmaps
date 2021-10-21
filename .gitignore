@@ -1,0 +1,5 @@
+items.json
+.ipynb_checkpoints
+.env
+*.pyc
+*-output.ipynb
