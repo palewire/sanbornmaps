@@ -13,6 +13,8 @@ pillow = "*"
 matplotlib = "*"
 numpy = "*"
 scipy = "*"
+fastprogress = "*"
+tqdm = "*"
 
 [dev-packages]
 
