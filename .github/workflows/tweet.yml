@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: checkout
-        name: Checkout
+        name: Checkout repository
         uses: actions/checkout@v2
 
       - id: install
@@ -19,9 +19,9 @@ jobs:
         with:
           python-version: 3.8
 
-      - id: make
-        name: Run make command
-        run: make
+      - id: execute
+        name: Execute Jupyter notebook
+        run: pipenv run jupyter execute tweet.ipynb
         shell: bash
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
