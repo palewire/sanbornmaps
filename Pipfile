@@ -12,6 +12,7 @@ matplotlib = "*"
 numpy = "*"
 fastprogress = "*"
 tqdm = "*"
+"mastodon.py" = "*"
 
 [dev-packages]
 
