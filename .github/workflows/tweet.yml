@@ -1,12 +1,12 @@
-name: Tweet
+name: Tweet and toot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: '0 */8 * * *'
 
 jobs:
   tweet:
-    name: Tweet
+    name: Tweet and toot
     runs-on: ubuntu-latest
     steps:
       - id: checkout
@@ -28,3 +28,16 @@ jobs:
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
+      - run: date > datestamp.txt
+
+      - id: commit
+        name: Commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git config pull.rebase false
+          git pull origin $GITHUB_REF
+          git add datestamp.txt
+          git commit -m "Ran a scrape" --author="palewire <palewire@users.noreply.github.com>" && git push || true
+        shell: bash
