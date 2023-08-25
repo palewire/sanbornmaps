@@ -1,4 +1,4 @@
-name: Tweet and toot
+name: Toot
 on:
   workflow_dispatch:
   schedule:
