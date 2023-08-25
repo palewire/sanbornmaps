@@ -6,7 +6,7 @@ on:
 
 jobs:
   tweet:
-    name: Tweet and toot
+    name: Toot
     runs-on: ubuntu-latest
     steps:
       - id: checkout
