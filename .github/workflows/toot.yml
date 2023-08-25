@@ -11,7 +11,7 @@ jobs:
     steps:
       - id: checkout
         name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - id: install
         name: Install Python, pipenv and Pipfile packages
