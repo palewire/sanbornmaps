@@ -23,7 +23,7 @@ jobs:
 
       - id: execute
         name: Execute Jupyter notebook
-        run: pipenv run jupyter execute tweet.ipynb
+        run: jupyter execute tweet.ipynb
         shell: bash
         env:
           MASTODON_CLIENT_KEY: ${{ secrets.MASTODON_CLIENT_KEY }}
