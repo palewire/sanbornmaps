@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install scraper
-        run: pip install jupyterlab requests pillow fastprogress tqdm 'mastodon.py' requests matplotlib
+        run: pip install jupyterlab requests python-twitter pillow fastprogress tqdm 'mastodon.py' requests matplotlib
 
       - id: execute
         name: Execute Jupyter notebook
